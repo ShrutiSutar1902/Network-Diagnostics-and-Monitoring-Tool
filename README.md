@@ -1,58 +1,46 @@
-🚀 Network Diagnostic & Monitoring Tool
-Overview
+# Network & System Diagnostic Tool
 
-A simple PowerShell script that automatically checks your computer’s network and system health.
-Instead of running multiple commands manually, this tool does all checks in one go and displays results clearly.
-It’s a practical tool that simulates tasks performed by a Technical Support Engineer.
+This Python script performs basic network and system diagnostics, including ping tests, DNS resolution, system information, CPU and memory usage, listening ports, and traceroute. It is cross-platform and works on both Windows and Unix-like systems.
 
-🔧 Features
+---
 
-1.Ping Test: Check internet/server connectivity
+## Features
 
-2.DNS Test: Verify website name resolution
+1. **Ping Test**  
+   Checks connectivity to `google.com` and displays the ping results.
 
-3.System Info: OS version, architecture, system type
+2. **DNS Test**  
+   Resolves the IP address of `google.com` to verify DNS functionality.
 
-4.CPU & Memory Usage: Monitor system performance
+3. **System Information**  
+   Displays OS, architecture, version, and processor details.
 
-5.Port Scan: Check if ports 22, 80, 443 are open
+4. **CPU & Memory Usage**  
+   Shows current CPU usage and available memory.
 
-💡 Why Use This Project?
+5. **Listening Ports**  
+   Lists all currently listening TCP/UDP ports on the system.
 
-1.Automates multiple troubleshooting steps → saves time
+6. **Traceroute**  
+   Traces the route to `google.com` to analyze the network path.  
+   - Uses `tracert` on Windows.  
+   - Uses `traceroute` or `tracepath` on Linux/macOS.
 
-2.Provides consistent and reliable results
+---
 
-3.Helps learn PowerShell scripting and network basics
+## Requirements
 
-4.Demonstrates problem-solving skills relevant to technical support roles
+- Python 3.6+
+- Libraries:
+  - `psutil`
+  - `platform` (standard)
+  - `socket` (standard)
+  - `subprocess` (standard)
+- Optional system tools for traceroute:
+  - Windows: `tracert` (built-in)
+  - Linux/macOS: `traceroute` or `tracepath`
 
-👥 Who Can Use It
+Install `psutil` using pip if not already installed:
 
-Technical Support Engineers for quick troubleshooting
-
-Beginners learning scripting, automation, and network/system checks
-
-⚡ How to Run
-
-1.Open PowerShell in the project folder
-
-2.Allow scripts to run (first time only):
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned → type Y
-
-3.Run the script:
-.\NetMonitor.ps1
-
-4.View results directly in PowerShell
-
-📊 Outcomes
-
-1.Internet connectivity status
-
-2.Website access verification
-
-3.OS and system info
-
-4.CPU & memory usage
-
-5.Open/closed status of important network ports
+```bash
+pip install psutil
