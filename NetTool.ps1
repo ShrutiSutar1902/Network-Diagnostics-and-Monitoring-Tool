@@ -70,3 +70,4 @@ try:
     print(completed.stdout or completed.stderr)
 except Exception as e:
     print(f"Traceroute failed: {e}")
+
